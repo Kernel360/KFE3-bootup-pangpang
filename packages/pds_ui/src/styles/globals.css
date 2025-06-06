@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+    --font-family-noto-sans: 'Noto Sans KR', ui-sans-serif, system-ui, sans-serif;
+
+    /* Font Sizes */
+    --font-size-heading-display: 2rem;      /* 32px */
+    --font-size-heading-page: 1.5rem;       /* 24px */
+    --font-size-heading-section: 1.25rem;   /* 20px */
+    --font-size-heading-card: 1rem;         /* 16px */
+    --font-size-body-large: 1.125rem;       /* 18px */
+    --font-size-body-default: 1rem;         /* 16px */
+    --font-size-body-small: 0.875rem;       /* 14px */
+    --font-size-label-default: 0.75rem;     /* 12px */
+    --font-size-caption-default: 0.625rem;  /* 10px */
+        
+    /* Line Heights */
+    --line-height-heading-display: 1.1875;  /* 38px / 32px */
+    --line-height-heading-page: 1;          /* 24px / 24px */
+    --line-height-heading-section: 1;       /* 20px / 20px */
+    --line-height-heading-card: 1.25;       /* 20px / 16px */
+    --line-height-body-large: 1.4;          /* 약 25px / 18px */
+    --line-height-body-default: 1.375;      /* 22px / 16px */
+    --line-height-body-small: 1.571;        /* 22px / 14px */
+    --line-height-label-default: 1.667;     /* 20px / 12px */
+    --line-height-caption-default: 1.4;     /* 약 14px / 10px */
+    
+    /* Font Weights */
+    --font-weight-heading-display: 800;
+    --font-weight-heading-page: 700;
+    --font-weight-heading-section: 700;
+    --font-weight-heading-card: 600;
+    --font-weight-body-large: 600;
+    --font-weight-body-default: 400;
+    --font-weight-body-small: 400;
+    --font-weight-label-default: 500;
+    --font-weight-caption-default: 400;
+
+    /* Brand Colors */
+    --color-brand-primary: #a96516;
+    --color-brand-primary-hover: #834e11;
+    --color-brand-primary-pressed: #643c0d;
+    --color-brand-secondary: #d9811c;
+    --color-brand-subtle: #FADCBA;
+    --color-brand-surface: #FDF4E9;
+
+    /* Success Colors */
+    --color-success-primary: #47826d;
+    --color-success-hover: #376554;
+    --color-success-pressed: #2A4D40;
+    --color-success-text: #376554;
+    --color-success-subtle: #cfe9df;
+    --color-success-surface: #f0f8f5;
+
+    /* Danger Colors */
+    --color-danger-primary: #aa2d69;
+    --color-danger-hover: #842351;
+    --color-danger-pressed: #651a3e;
+    --color-danger-text: #842351;
+    --color-danger-subtle: #fac3de;
+    --color-danger-surface: #feecf4;
+
+    /* Info Colors */
+    --color-info-primary: #513ab0;
+    --color-info-hover: #3f2d88;
+    --color-info-pressed: #302268;
+    --color-info-text: #3f2d88;
+    --color-info-subtle: #d3c9fd;
+    --color-info-surface: #f1eefe;
+
+    /* Neutral Colors */
+    --color-text-primary: #1f1f1f;
+    --color-text-secondary: #444444;
+    --color-text-tertiary: #656565;
+    --color-text-disabled: #8f8f8f;
+    --color-border-default: #d2d2d2;
+    --color-border-subtle: #e8e8e8;
+    --color-surface-default: #f4f4f7;
+    --color-surface-white: #ffffff;
+
+
+    /* Base Spacing Scale (4px 기준) */
+    --spacing-0: 0;
+    --spacing-1: 0.25rem;   /* 4px */
+    --spacing-2: 0.5rem;    /* 8px */
+    --spacing-3: 0.75rem;   /* 12px */
+    --spacing-4: 1rem;      /* 16px */
+    --spacing-5: 1.25rem;   /* 20px */
+    --spacing-6: 1.5rem;    /* 24px */
+    --spacing-8: 2rem;      /* 32px */
+    --spacing-10: 2.5rem;   /* 40px */
+    --spacing-12: 3rem;     /* 48px */
+    --spacing-16: 4rem;     /* 64px */
+
+    /* Semantic Spacing */
+    --spacing-component-xs: var(--spacing-2); /* 8px - 작은 컴포넌트 내부 */
+    --spacing-component-sm: var(--spacing-3); /* 12px - 버튼, 입력 필드 */
+    --spacing-component-md: var(--spacing-4); /* 16px - 카드, 패널 */
+    --spacing-component-lg: var(--spacing-6); /* 24px - 큰 카드, 모달 */
+    --spacing-component-xl: var(--spacing-8); /* 32px - 섹션 간격 */
+
+    /* Layout Spacing */
+    --spacing-layout-xs: var(--spacing-4); /* 16px - 요소 간 기본 간격 */
+    --spacing-layout-sm: var(--spacing-6); /* 24px - 섹션 내 간격 */
+    --spacing-layout-md: var(--spacing-8); /* 32px - 섹션 간 간격 */
+    --spacing-layout-lg: var(--spacing-12); /* 48px - 큰 섹션 간격 */
+    --spacing-layout-xl: var(--spacing-16); /* 64px - 페이지 간격 */
+    
+    /* Semantic Radius */
+    --radius-button: var(--radius-md);      /* 6px - 버튼 */
+    --radius-input: var(--radius-sm);       /* 4px - 입력 필드 */
+    --radius-card: var(--radius-lg);        /* 8px - 카드 */
+    --radius-modal: var(--radius-xl);       /* 12px - 모달, 큰 패널 */
+    --radius-image: var(--radius-md);       /* 6px - 이미지 */
+    --radius-avatar: var(--radius-full);    /* 원형 - 아바타 */
+    --radius-badge: var(--radius-full);     /* 원형 - 배지 */
+    
+    /* Icon Sizes */
+    --size-icon-xs: 0.75rem; /* 12px */
+    --size-icon-sm: 1rem; /* 16px */
+    --size-icon-md: 1.25rem; /* 20px */
+    --size-icon-lg: 1.5rem; /* 24px */
+    --size-icon-xl: 2rem; /* 32px */
+    --size-icon-2xl: 3rem; /* 48px */
+    
+
+    /* Avatar Sizes */
+    --size-avatar-xs: 1.5rem; /* 24px */ 
+    --size-avatar-sm: 2rem; /* 32px */
+    --size-avatar-md: 2.5rem; /* 40px */
+    --size-avatar-lg: 3rem; /* 48px */
+    --size-avatar-xl: 4rem; /* 64px */
+    
+
+    /* Button Heights */
+    --size-button-sm: 2rem; /* 32px */
+    --size-button-md: 2.5rem; /* 40px */
+    --size-button-lg: 3rem; /* 48px */
+    
+
+    /* Input Heights */
+    --size-input-sm: 2rem; /* 32px */
+    --size-input-md: 2.5rem; /* 40px */
+    --size-input-lg: 3rem; /* 48px */
+}
+
+@layer base {
+    html,
+    body {
+        font-family: var(--font-family-noto-sans);
+    }
+}
+
+@layer components {
+
+    /* Heading Styles */
+    .typo-heading-display {
+        font-size: var(--font-size-heading-display);
+        font-weight: var(--font-weight-heading-display);
+        line-height: var(--line-height-heading-display);
+    }
+
+    .typo-heading-page {
+        font-size: var(--font-size-heading-page);
+        font-weight: var(--font-weight-heading-page);
+        line-height: var(--line-height-heading-page);
+    }
+
+    .typo-heading-section {
+        font-size: var(--font-size-heading-section);
+        font-weight: var(--font-weight-heading-section);
+        line-height: var(--line-height-heading-section);
+    }
+
+    .typo-heading-card {
+        font-size: var(--font-size-heading-card);
+        font-weight: var(--font-weight-heading-card);
+        line-height: var(--line-height-heading-card);
+    }
+
+    /* Body Styles */
+    .typo-body-large {
+        font-size: var(--font-size-body-large);
+        font-weight: var(--font-weight-body-large);
+        line-height: var(--line-height-body-large);
+    }
+
+    .typo-body-default {
+        font-size: var(--font-size-body-default);
+        font-weight: var(--font-weight-body-default);
+        line-height: var(--line-height-body-default);
+    }
+
+    .typo-body-small {
+        font-size: var(--font-size-body-small);
+        font-weight: var(--font-weight-body-small);
+        line-height: var(--line-height-body-small);
+    }
+
+    .typo-label-default {
+        font-size: var(--font-size-label-default);
+        font-weight: var(--font-weight-label-default);
+        line-height: var(--line-height-label-default);
+    }
+
+    .typo-caption-default {
+        font-size: var(--font-size-caption-default);
+        font-weight: var(--font-weight-caption-default);
+        line-height: var(--line-height-caption-default);
+    }
+}
+
+
+/* Functional utilities for component spacing */
+@utility p-component-* {
+    padding: --value(--spacing-component-*);
+}
+
+@utility px-component-* {
+    padding-left: --value(--spacing-component-*);
+    padding-right: --value(--spacing-component-*);
+}
+
+@utility py-component-* {
+    padding-top: --value(--spacing-component-*);
+    padding-bottom: --value(--spacing-component-*);
+}
+
+@utility m-component-* {
+    margin: --value(--spacing-component-*);
+}
+
+@utility mx-component-* {
+    margin-left: --value(--spacing-component-*);
+    margin-right: --value(--spacing-component-*);
+}
+
+@utility my-component-* {
+    margin-top: --value(--spacing-component-*);
+    margin-bottom: --value(--spacing-component-*);
+}
+
+/* Functional utilities for layout spacing */
+@utility p-layout-* {
+    padding: --value(--spacing-layout-*);
+}
+
+@utility m-layout-* {
+    margin: --value(--spacing-layout-*);
+}
+
+@utility gap-component-* {
+    gap: --value(--spacing-component-*);
+}
+
+@utility gap-layout-* {
+    gap: --value(--spacing-layout-*);
+}
