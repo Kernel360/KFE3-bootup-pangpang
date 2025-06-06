@@ -10,13 +10,14 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint .",
     "format": "prettier --write .",
-    "prepare": "husky",
+    "prepare": "husky && husky install",
     "postinstall": "npx mrm lint-staged"
   },
   "lint-staged": {
     "**/*.{js,ts,tsx}": [
       "eslint --fix"
-    ]
+    ],
+    "*.js": "eslint --cache --fix"
   },
   "keywords": [],
   "author": "",
