@@ -1,0 +1,29 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "dist"
+  },
+  "compileOnSave": false,
+  "files": [],
+  "exclude": [
+    "node_modules",
+    "dist",
+    ".next",
+    "coverage",
+    "storybook-static",
+    "**/node_modules",
+    "**/dist",
+    "**/build",
+    "**/.next",
+    "**/coverage",
+    "**/storybook-static"
+  ],
+  "references": [
+    {
+      "path": "./apps/web"
+    },
+    {
+      "path": "./packages/pds_ui"
+    }
+  ]
+}
