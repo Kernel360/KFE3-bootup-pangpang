@@ -1,6 +1,5 @@
 import React from 'react';
 import clsx from 'clsx';
-import '../../../styles/globals.css';
 
 const base = 'transition-colors';
 const sizes = {
