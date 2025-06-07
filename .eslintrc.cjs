@@ -2,6 +2,7 @@ module.exports = {
   root: true,
   env: {
     browser: true,
+    node: true,
     es2021: true,
   },
   extends: [
@@ -11,9 +12,6 @@ module.exports = {
   ],
   overrides: [
     {
-      env: {
-        node: true,
-      },
       files: ['.eslintrc.{js,cjs}'],
       parserOptions: {
         sourceType: 'script',
@@ -26,5 +24,12 @@ module.exports = {
     sourceType: 'module',
   },
   plugins: ['@typescript-eslint'],
-  rules: {},
+  rules: {
+    'prettier/prettier': [
+      'error',
+      {
+        endOfLine: 'auto',
+      },
+    ],
+  },
 };

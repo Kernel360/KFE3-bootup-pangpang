@@ -4,14 +4,15 @@ about: Describe this issue template's purpose here.
 title: ''
 labels: ''
 assignees: ''
-
 ---
 
 ---
+
 name: 버그 리포트
 about: 버그 발생 시 이 템플릿을 사용해 주세요
 title: "[BUG] "
 labels: bug
+
 ---
 
 ## #️⃣ 어떤 버그인가요?
