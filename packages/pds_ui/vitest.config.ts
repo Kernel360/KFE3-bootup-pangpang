@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url';
 import { defineConfig } from 'vitest/config';
 
 import { storybookTest } from '@storybook/addon-vitest/vitest-plugin';
+import tailwindcss from '@tailwindcss/vite';
 
 const dirname =
   typeof __dirname !== 'undefined'
@@ -34,4 +35,5 @@ export default defineConfig({
       },
     ],
   },
+  plugins: [tailwindcss()],
 });
