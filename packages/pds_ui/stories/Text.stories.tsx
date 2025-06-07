@@ -7,6 +7,9 @@ const meta: Meta<typeof Text> = {
   tags: ['autodocs'],
   args: {
     children: '타이포 예시 텍스트',
+    variant: 'body-default',
+    color: 'text-primary',
+    as: 'span',
   },
   argTypes: {
     as: {
@@ -27,7 +30,43 @@ const meta: Meta<typeof Text> = {
         'caption-default',
       ],
     },
+    color: {
+      control: 'select',
+      options: [
+        'brand-primary',
+        'brand-primary-hover',
+        'brand-primary-pressed',
+        'brand-secondary',
+        'brand-subtle',
+        'brand-surface',
+        'success-primary',
+        'success-hover',
+        'success-pressed',
+        'success-text',
+        'success-subtle',
+        'success-surface',
+        'danger-primary',
+        'danger-hover',
+        'danger-pressed',
+        'danger-text',
+        'danger-subtle',
+        'danger-surface',
+        'info-primary',
+        'info-hover',
+        'info-pressed',
+        'info-text',
+        'info-subtle',
+        'info-surface',
+        'text-primary',
+        'text-secondary',
+        'text-tertiary',
+        'text-disabled',
+      ],
+    },
     className: {
+      control: 'text',
+    },
+    children: {
       control: 'text',
     },
   },
@@ -36,85 +75,84 @@ export default meta;
 
 type Story = StoryObj<typeof Text>;
 
-export const HeadlineDisplay: Story = {
-  args: {
-    as: 'h1',
-    variant: 'headline-display',
-    children: 'Headline Display',
-  },
-};
-
-export const HeadlinePage: Story = {
-  args: {
-    as: 'h2',
-    variant: 'headline-page',
-    children: 'Headline Page',
-  },
-};
-
-export const HeadlineSection: Story = {
-  args: {
-    as: 'h3',
-    variant: 'headline-section',
-    children: 'Headline Section',
-  },
-};
-
-export const HeadlineCard: Story = {
-  args: {
-    as: 'h4',
-    variant: 'headline-card',
-    children: 'Headline Card',
-  },
-};
-
-export const BodyLarge: Story = {
-  args: {
-    as: 'p',
-    variant: 'body-large',
-    children: 'Body Large',
-  },
-};
-
-export const BodyDefault: Story = {
-  args: {
-    as: 'p',
-    variant: 'body-default',
-    children: 'Body Default',
-  },
-};
-
-export const BodySmall: Story = {
-  args: {
-    as: 'span',
-    variant: 'body-small',
-    children: 'Body Small',
-  },
-};
-
-export const LabelDefault: Story = {
-  args: {
-    as: 'label',
-    variant: 'label-default',
-    children: 'Label Default',
-    htmlFor: 'input-id',
-  },
-};
-
-export const CaptionDefault: Story = {
-  args: {
-    as: 'span',
-    variant: 'caption-default',
-    children: 'Caption Default',
-  },
-};
-
-// Playground
 export const Playground: Story = {
   args: {
-    as: 'span',
+    children: '플레이그라운드 예시 텍스트',
     variant: 'body-default',
-    children: 'Playground',
-    className: 'text-brand-primary',
+    color: 'text-primary',
+    as: 'span',
+  },
+};
+
+export const HeadlineDisplay: Story = {
+  args: {
+    children: 'Headline Display',
+    variant: 'headline-display',
+    color: 'brand-primary',
+    as: 'h1',
+  },
+};
+export const HeadlinePage: Story = {
+  args: {
+    children: 'Headline Page',
+    variant: 'headline-page',
+    color: 'brand-primary',
+    as: 'h2',
+  },
+};
+export const HeadlineSection: Story = {
+  args: {
+    children: 'Headline Section',
+    variant: 'headline-section',
+    color: 'brand-secondary',
+    as: 'h3',
+  },
+};
+export const HeadlineCard: Story = {
+  args: {
+    children: 'Headline Card',
+    variant: 'headline-card',
+    color: 'brand-secondary',
+    as: 'h4',
+  },
+};
+export const BodyLarge: Story = {
+  args: {
+    children: 'Body Large',
+    variant: 'body-large',
+    color: 'success-primary',
+    as: 'p',
+  },
+};
+export const BodyDefault: Story = {
+  args: {
+    children: 'Body Default',
+    variant: 'body-default',
+    color: 'text-primary',
+    as: 'p',
+  },
+};
+export const BodySmall: Story = {
+  args: {
+    children: 'Body Small',
+    variant: 'body-small',
+    color: 'danger-primary',
+    as: 'span',
+  },
+};
+export const LabelDefault: Story = {
+  args: {
+    children: 'Label Default',
+    variant: 'label-default',
+    color: 'text-tertiary',
+    as: 'label',
+  },
+};
+export const CaptionDefault: Story = {
+  args: {
+    children: 'Caption Default',
+    variant: 'caption-default',
+    color: 'text-disabled',
+    as: 'span',
   },
 };
