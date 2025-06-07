@@ -139,8 +139,6 @@
   --size-input-sm: 2rem; /* 32px */
   --size-input-md: 2.5rem; /* 40px */
   --size-input-lg: 3rem; /* 48px */
-<<<<<<< HEAD
-=======
 }
 
 @layer utilities {
@@ -237,7 +235,6 @@
   .text-disabled {
     color: var(--color-text-disabled);
   }
->>>>>>> 95fbc10e9f56b85bbf7c890e27994773393d4b3b
 }
 
 @layer base {
