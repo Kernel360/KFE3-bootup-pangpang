@@ -1,0 +1,45 @@
+/* Functional utilities for component spacing */
+@utility p-component-* {
+  padding: --value(--spacing-component- *);
+}
+
+@utility px-component-* {
+  padding-left: --value(--spacing-component- *);
+  padding-right: --value(--spacing-component- *);
+}
+
+@utility py-component-* {
+  padding-top: --value(--spacing-component- *);
+  padding-bottom: --value(--spacing-component- *);
+}
+
+@utility m-component-* {
+  margin: --value(--spacing-component- *);
+}
+
+@utility mx-component-* {
+  margin-left: --value(--spacing-component- *);
+  margin-right: --value(--spacing-component- *);
+}
+
+@utility my-component-* {
+  margin-top: --value(--spacing-component- *);
+  margin-bottom: --value(--spacing-component- *);
+}
+
+/* Functional utilities for layout spacing */
+@utility p-layout-* {
+  padding: --value(--spacing-layout- *);
+}
+
+@utility m-layout-* {
+  margin: --value(--spacing-layout- *);
+}
+
+@utility gap-component-* {
+  gap: --value(--spacing-component- *);
+}
+
+@utility gap-layout-* {
+  gap: --value(--spacing-layout- *);
+}

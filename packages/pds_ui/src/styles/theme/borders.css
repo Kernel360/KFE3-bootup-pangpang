@@ -1,0 +1,10 @@
+@theme {
+  /* Semantic Radius */
+  --radius-button: var(--radius-md); /* 6px - 버튼 */
+  --radius-input: var(--radius-sm); /* 4px - 입력 필드 */
+  --radius-card: var(--radius-lg); /* 8px - 카드 */
+  --radius-modal: var(--radius-xl); /* 12px - 모달, 큰 패널 */
+  --radius-image: var(--radius-md); /* 6px - 이미지 */
+  --radius-avatar: var(--radius-full); /* 원형 - 아바타 */
+  --radius-badge: var(--radius-full); /* 원형 - 배지 */
+}

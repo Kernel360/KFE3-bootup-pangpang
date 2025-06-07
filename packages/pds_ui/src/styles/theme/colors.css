@@ -1,0 +1,43 @@
+@theme {
+  /* Brand Colors */
+  --color-brand-primary: #a96516;
+  --color-brand-primary-hover: #834e11;
+  --color-brand-primary-pressed: #643c0d;
+  --color-brand-secondary: #d9811c;
+  --color-brand-subtle: #fadcba;
+  --color-brand-surface: #fdf4e9;
+
+  /* Success Colors */
+  --color-success-primary: #47826d;
+  --color-success-hover: #376554;
+  --color-success-pressed: #2a4d40;
+  --color-success-text: #376554;
+  --color-success-subtle: #cfe9df;
+  --color-success-surface: #f0f8f5;
+
+  /* Danger Colors */
+  --color-danger-primary: #aa2d69;
+  --color-danger-hover: #842351;
+  --color-danger-pressed: #651a3e;
+  --color-danger-text: #842351;
+  --color-danger-subtle: #fac3de;
+  --color-danger-surface: #feecf4;
+
+  /* Info Colors */
+  --color-info-primary: #513ab0;
+  --color-info-hover: #3f2d88;
+  --color-info-pressed: #302268;
+  --color-info-text: #3f2d88;
+  --color-info-subtle: #d3c9fd;
+  --color-info-surface: #f1eefe;
+
+  /* Neutral Colors */
+  --color-text-primary: #1f1f1f;
+  --color-text-secondary: #444444;
+  --color-text-tertiary: #656565;
+  --color-text-disabled: #8f8f8f;
+  --color-border-default: #d2d2d2;
+  --color-border-subtle: #e8e8e8;
+  --color-surface-default: #f4f4f7;
+  --color-surface-white: #ffffff;
+}

@@ -35,9 +35,12 @@
     "@vitest/browser": "^3.2.1",
     "@vitest/coverage-v8": "^3.2.1",
     "autoprefixer": "^10.4.21",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
     "playwright": "^1.52.0",
     "postcss": "^8.5.4",
     "storybook": "9.0.4",
+    "tailwind-merge": "^3.3.0",
     "tailwindcss": "^4.1.8",
     "typescript": "~5.8.3",
     "vitest": "^3.2.1"
