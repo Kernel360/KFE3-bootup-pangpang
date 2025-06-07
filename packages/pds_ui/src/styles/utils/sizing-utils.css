@@ -1,0 +1,9 @@
+/* Button 높이 유틸리티 클래스 */
+@utility h-button-* {
+  height: --value(--size-button- *);
+}
+
+/* Input 높이 유틸리티 클래스 */
+@utility h-input-* {
+  height: --value(--size-input- *);
+}

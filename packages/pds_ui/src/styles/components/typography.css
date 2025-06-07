@@ -1,0 +1,57 @@
+@layer components {
+  /* Heading Styles */
+  .typo-heading-display {
+    font-size: var(--font-size-heading-display);
+    font-weight: var(--font-weight-heading-display);
+    line-height: var(--line-height-heading-display);
+  }
+
+  .typo-heading-page {
+    font-size: var(--font-size-heading-page);
+    font-weight: var(--font-weight-heading-page);
+    line-height: var(--line-height-heading-page);
+  }
+
+  .typo-heading-section {
+    font-size: var(--font-size-heading-section);
+    font-weight: var(--font-weight-heading-section);
+    line-height: var(--line-height-heading-section);
+  }
+
+  .typo-heading-card {
+    font-size: var(--font-size-heading-card);
+    font-weight: var(--font-weight-heading-card);
+    line-height: var(--line-height-heading-card);
+  }
+
+  /* Body Styles */
+  .typo-body-large {
+    font-size: var(--font-size-body-large);
+    font-weight: var(--font-weight-body-large);
+    line-height: var(--line-height-body-large);
+  }
+
+  .typo-body-default {
+    font-size: var(--font-size-body-default);
+    font-weight: var(--font-weight-body-default);
+    line-height: var(--line-height-body-default);
+  }
+
+  .typo-body-small {
+    font-size: var(--font-size-body-small);
+    font-weight: var(--font-weight-body-small);
+    line-height: var(--line-height-body-small);
+  }
+
+  .typo-label-default {
+    font-size: var(--font-size-label-default);
+    font-weight: var(--font-weight-label-default);
+    line-height: var(--line-height-label-default);
+  }
+
+  .typo-caption-default {
+    font-size: var(--font-size-caption-default);
+    font-weight: var(--font-weight-caption-default);
+    line-height: var(--line-height-caption-default);
+  }
+}

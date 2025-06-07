@@ -1,0 +1,26 @@
+@theme {
+  /* Icon Sizes */
+  --size-icon-xs: 0.75rem; /* 12px */
+  --size-icon-sm: 1rem; /* 16px */
+  --size-icon-md: 1.25rem; /* 20px */
+  --size-icon-lg: 1.5rem; /* 24px */
+  --size-icon-xl: 2rem; /* 32px */
+  --size-icon-2xl: 3rem; /* 48px */
+
+  /* Avatar Sizes */
+  --size-avatar-xs: 1.5rem; /* 24px */
+  --size-avatar-sm: 2rem; /* 32px */
+  --size-avatar-md: 2.5rem; /* 40px */
+  --size-avatar-lg: 3rem; /* 48px */
+  --size-avatar-xl: 4rem; /* 64px */
+
+  /* Button Heights */
+  --size-button-sm: 2rem; /* 32px */
+  --size-button-md: 2.5rem; /* 40px */
+  --size-button-lg: 3rem; /* 48px */
+
+  /* Input Heights */
+  --size-input-sm: 2rem; /* 32px */
+  --size-input-md: 2.5rem; /* 40px */
+  --size-input-lg: 3rem; /* 48px */
+}
