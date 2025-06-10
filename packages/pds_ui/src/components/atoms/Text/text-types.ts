@@ -10,8 +10,7 @@ export type TextElement =
   | 'h3'
   | 'h4'
   | 'h5'
-  | 'h6'
-  | 'label';
+  | 'h6';
 
 // Text 컴포넌트 고유 props
 type TextProps = {
