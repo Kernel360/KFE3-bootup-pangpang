@@ -1,11 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import * as Icons from './index';
-
-interface IconProps {
-  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
-  color?: 'primary' | 'success' | 'danger' | 'info';
-  className?: string;
-}
+import type { IconProps } from './icon-types';
 
 const meta: Meta<IconProps> = {
   title: 'Icons/Icons',
@@ -17,7 +12,7 @@ const meta: Meta<IconProps> = {
     },
     color: {
       control: 'select',
-      options: ['primary', 'danger', 'success', 'info'],
+      options: [undefined, 'primary', 'danger', 'success', 'info'],
     },
     className: {
       control: 'text',
@@ -25,7 +20,7 @@ const meta: Meta<IconProps> = {
   },
   args: {
     size: 'md',
-    color: 'primary',
+    color: undefined,
   },
 };
 
