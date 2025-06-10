@@ -4,7 +4,7 @@ import { BASE, SIZES, VARIANTS } from './button-styles';
 import { ButtonProps } from './button-types';
 import { cn } from '../../../utils/cn';
 
-export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   (props, ref) => {
     const {
       size = 'md',
@@ -38,3 +38,6 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     );
   },
 );
+
+Button.displayName = 'Button';
+export { Button };
