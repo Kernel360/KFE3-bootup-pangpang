@@ -3,7 +3,7 @@ import { ComponentProps, HTMLAttributes } from 'react';
 export type ButtonElementType = 'button' | 'a' | 'div' | 'span' | 'input';
 
 export type BaseButtonProps<T extends ButtonElementType = 'button'> = {
-  elementType?: T;
+  as?: T;
   role?: string;
   type?: 'button' | 'submit' | 'reset';
   isDisabled?: boolean;

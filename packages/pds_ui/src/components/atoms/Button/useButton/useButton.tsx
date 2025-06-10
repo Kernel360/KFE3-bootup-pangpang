@@ -3,7 +3,7 @@ import { BaseButtonProps, OverloadedButtonFunction } from './useButton-types';
 //eslint-disable-next-line
 export const useButton: OverloadedButtonFunction = (props: any): any => {
   const {
-    elementType = 'button',
+    as = 'button',
     isDisabled,
     isLoading,
     tabIndex,
@@ -19,7 +19,7 @@ export const useButton: OverloadedButtonFunction = (props: any): any => {
     if (event.key === ' ' || event.key === 'Spacebar' || event.key === '32') {
       if (disabled) return;
       if (event.defaultPrevented) return;
-      if (elementType === 'button') return;
+      if (as === 'button') return;
 
       event.preventDefault();
       (event.currentTarget as HTMLElement).click();
@@ -30,7 +30,7 @@ export const useButton: OverloadedButtonFunction = (props: any): any => {
     if (event.key === 'Enter' || event.key === '13') {
       if (disabled) return;
       if (event.defaultPrevented) return;
-      if (elementType === 'input' && type !== 'button') return;
+      if (as === 'input' && type !== 'button') return;
 
       event.preventDefault();
       (event.currentTarget as HTMLElement).click();
@@ -48,7 +48,7 @@ export const useButton: OverloadedButtonFunction = (props: any): any => {
 
   let additionalProps = {};
 
-  switch (elementType) {
+  switch (as) {
     case 'button': {
       additionalProps = {
         type: type ?? 'button',
