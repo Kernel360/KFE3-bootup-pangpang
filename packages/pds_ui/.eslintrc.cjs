@@ -25,6 +25,15 @@ module.exports = {
       },
     ],
 
+    'react/function-component-definition': [
+      'error',
+      {
+        namedComponents: 'arrow-function',
+        unnamedComponents: 'arrow-function',
+      },
+    ],
+    'func-style': ['error', 'expression'],
+
     'no-console': 'error',
   },
 };
