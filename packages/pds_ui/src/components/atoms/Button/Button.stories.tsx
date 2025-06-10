@@ -1,167 +1,91 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Button } from './Button';
-
+// import { ButtonProps } from './button-types';
 const meta: Meta<typeof Button> = {
-  title: 'Atom/Button',
+  title: 'Atoms/Button',
   component: Button,
   tags: ['autodocs'],
+  args: {
+    children: '버튼 예시',
+    size: 'md',
+    variant: 'brand',
+    isDisabled: false,
+    isLoading: false,
+  },
   argTypes: {
-    size: { control: 'radio' },
-    variant: { control: 'radio' },
+    size: {
+      control: 'select',
+      options: ['sm', 'md', 'lg'],
+    },
+    variant: {
+      control: 'select',
+      options: ['brand', 'success', 'danger', 'info', 'neutral'],
+    },
+    isDisabled: {
+      control: 'boolean',
+    },
+    isLoading: {
+      control: 'boolean',
+    },
+    className: {
+      control: 'text',
+    },
+    children: {
+      control: 'text',
+    },
   },
 };
 export default meta;
+
 type Story = StoryObj<typeof Button>;
 
-// Brand
-export const Brand_md: Story = {
+export const Playground: Story = {
   args: {
-    children: 'Brand Button Medium',
-    variant: 'brand',
+    children: '플레이그라운드 버튼',
     size: 'md',
-  },
-};
-
-export const Brand_sm: Story = {
-  args: {
-    children: 'Brand Button Small',
     variant: 'brand',
-    size: 'sm',
   },
 };
 
-export const Brand_lg: Story = {
+export const Brand: Story = {
   args: {
-    children: 'Brand Button Large',
+    children: '브랜드 버튼',
     variant: 'brand',
-    size: 'lg',
   },
 };
-
-// Success
-export const Success_md: Story = {
+export const Success: Story = {
   args: {
-    children: 'Success Button Medium',
+    children: '성공 버튼',
     variant: 'success',
-    size: 'md',
   },
 };
-
-export const Success_sm: Story = {
+export const Danger: Story = {
   args: {
-    children: 'Success Button Small',
-    variant: 'success',
-    size: 'sm',
-  },
-};
-
-export const Success_lg: Story = {
-  args: {
-    children: 'Success Button Large',
-    variant: 'success',
-    size: 'lg',
-  },
-};
-
-// Danger
-export const Danger_md: Story = {
-  args: {
-    children: 'Danger Button Medium',
+    children: '위험 버튼',
     variant: 'danger',
-    size: 'md',
   },
 };
-
-export const Danger_sm: Story = {
+export const Info: Story = {
   args: {
-    children: 'Danger Button Small',
-    variant: 'danger',
-    size: 'sm',
-  },
-};
-
-export const Danger_lg: Story = {
-  args: {
-    children: 'Danger Button Large',
-    variant: 'danger',
-    size: 'lg',
-  },
-};
-
-// Info
-export const Info_md: Story = {
-  args: {
-    children: 'Info Button Medium',
+    children: '정보 버튼',
     variant: 'info',
-    size: 'md',
   },
 };
-
-export const Info_sm: Story = {
+export const Neutral: Story = {
   args: {
-    children: 'Info Button Small',
-    variant: 'info',
-    size: 'sm',
-  },
-};
-
-export const Info_lg: Story = {
-  args: {
-    children: 'Info Button Large',
-    variant: 'info',
-    size: 'lg',
-  },
-};
-
-// Neutral
-export const Neutral_md: Story = {
-  args: {
-    children: 'Neutral Button Medium',
+    children: '중립 버튼',
     variant: 'neutral',
-    size: 'md',
   },
 };
-
-export const Neutral_sm: Story = {
+export const Disabled: Story = {
   args: {
-    children: 'Neutral Button Small',
-    variant: 'neutral',
-    size: 'sm',
+    children: '비활성화 버튼',
+    isDisabled: true,
   },
 };
-
-export const Neutral_lg: Story = {
+export const Loading: Story = {
   args: {
-    children: 'Neutral Button Large',
-    variant: 'neutral',
-    size: 'lg',
-  },
-};
-
-// Disabled
-export const Disabled_md: Story = {
-  args: {
-    children: 'Disabled Button Medium',
-    variant: 'brand',
-    size: 'md',
-    disabled: true,
-  },
-};
-
-export const Disabled_sm: Story = {
-  args: {
-    children: 'Disabled Button Small',
-    variant: 'brand',
-    size: 'sm',
-    disabled: true,
-  },
-};
-
-export const Disabled_lg: Story = {
-  args: {
-    children: 'Disabled Button Large',
-    variant: 'brand',
-    size: 'lg',
-    disabled: true,
+    children: '로딩 버튼',
+    isLoading: true,
   },
 };
