@@ -31,5 +31,8 @@ module.exports = {
         endOfLine: 'auto',
       },
     ],
+
+    'no-loop-func': 'error',
+    'no-await-in-loop': 'warn',
   },
 };
