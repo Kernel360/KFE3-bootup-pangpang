@@ -1,69 +1,46 @@
-import { OverloadedInputFunction } from './useInput-types';
+import { useState } from 'react';
+import { UseInputProps, UseInputResult } from './useInput-types';
 
-export const useInput: OverloadedInputFunction = (props: any): any => {
+export const useInput = (props: UseInputProps): UseInputResult => {
   const {
-    as = 'input',
-    isDisabled,
-    isReadOnly,
-    isRequired,
-    tabIndex,
-    onKeyDown,
-    type = 'text',
-    placeholder,
+    isDisabled = false,
+    isInvalid = false,
+    isReadOnly = false,
+    isRequired = false,
+    defaultValue,
     value,
+    onChange,
     ...rest
   } = props;
 
-  const disabled = isDisabled;
+  const isControlled = value !== undefined && onChange !== undefined;
+  const [uncontrolledValue, setUncontrolledValue] = useState(
+    defaultValue ?? '',
+  );
 
-  const handleKeyDown = (event: React.KeyboardEvent) => {
-    onKeyDown?.(event);
-
-    if (event.key === 'Enter' || event.key === '13') {
-      if (disabled) return;
-      if (event.defaultPrevented) return;
-
-      event.preventDefault();
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (isControlled) {
+      onChange(e);
+    } else {
+      setUncontrolledValue(e.target.value);
     }
   };
 
-  const baseProps = {
-    ...rest,
-    tabIndex: disabled ? undefined : (tabIndex ?? 0),
-    onKeyDown: handleKeyDown,
-  };
-
-  let additionalProps: Record<string, any> = {};
-
-  switch (as) {
-    case 'input':
-      additionalProps = {
-        type,
-        disabled,
-        readOnly: isReadOnly,
-        required: isRequired,
-        placeholder,
-        value,
-      };
-      break;
-    case 'textarea':
-      additionalProps = {
-        disabled,
-        readOnly: isReadOnly,
-        required: isRequired,
-        placeholder,
-        value,
-      };
-      break;
-    default:
-      additionalProps = {
-        role: 'textbox',
-        disabled,
-      };
-      break;
-  }
+  const currentValue = isControlled ? value : uncontrolledValue;
 
   return {
-    inputProps: { ...baseProps, ...additionalProps },
+    inputProps: {
+      ...rest,
+      disabled: isDisabled,
+      readOnly: isReadOnly,
+      defaultValue,
+      value: currentValue,
+      onChange: handleChange,
+      'data-disabled': isDisabled,
+      'data-invalid': isInvalid,
+      'aria-invalid': isInvalid,
+      'aria-required': isRequired,
+    },
+    valueCount: currentValue.toString().length,
   };
 };

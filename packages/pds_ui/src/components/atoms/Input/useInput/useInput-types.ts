@@ -16,6 +16,19 @@ export type BaseInputProps<T extends InputElementType = 'input'> = {
   size?: InputSize;
 } & Omit<ComponentProps<T>, 'size'>;
 
+export type UseInputProps = {
+  isDisabled?: boolean;
+  isInvalid?: boolean;
+  isReadOnly?: boolean;
+  isRequired?: boolean;
+  defaultValue?: string;
+  value?: string;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+} & Omit<
+  HTMLAttributes<HTMLInputElement>,
+  'onChange' | 'defaultValue' | 'value'
+>;
+
 export type UseInputReturn<T> = {
   inputProps: Omit<HTMLAttributes<T>, 'size'> & {
     role?: string;
@@ -27,6 +40,24 @@ export type UseInputReturn<T> = {
     placeholder?: string;
     value?: string;
   };
+};
+
+export type UseInputResult = {
+  inputProps: {
+    disabled: boolean;
+    readOnly: boolean;
+    defaultValue?: string;
+    value: string;
+    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    'data-disabled': boolean;
+    'data-invalid': boolean;
+    'aria-invalid': boolean;
+    'aria-required': boolean;
+  } & Omit<
+    HTMLAttributes<HTMLInputElement>,
+    'onChange' | 'defaultValue' | 'value' | 'disabled' | 'readOnly'
+  >;
+  valueCount: number;
 };
 
 export type OverloadedInputFunction = {
