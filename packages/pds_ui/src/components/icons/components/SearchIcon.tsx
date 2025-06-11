@@ -1,7 +1,7 @@
 import { PiMagnifyingGlassBold } from 'react-icons/pi';
 import { cn } from '../../../utils/cn';
 import type { IconProps } from '../icon-types';
-import { COLOR_MAP, SIZE_MAP } from '../icon-styles';
+import { COLORS, SIZES } from '../icon-styles';
 
 export const SearchIcon = ({
   size = 'md',
@@ -9,8 +9,8 @@ export const SearchIcon = ({
   className,
   ...props
 }: IconProps) => {
-  const sizeValue = SIZE_MAP[size];
-  const colorValue = color ? COLOR_MAP[color] : undefined;
+  const sizeValue = SIZES[size];
+  const colorValue = color ? COLORS[color] : undefined;
 
   const iconStyle = {
     width: sizeValue,
