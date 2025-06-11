@@ -140,14 +140,7 @@ export const BodySmall: Story = {
     as: 'span',
   },
 };
-export const LabelDefault: Story = {
-  args: {
-    children: 'Label Default',
-    variant: 'label-default',
-    color: 'text-tertiary',
-    as: 'label',
-  },
-};
+
 export const CaptionDefault: Story = {
   args: {
     children: 'Caption Default',
