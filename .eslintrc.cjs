@@ -31,6 +31,7 @@ module.exports = {
         endOfLine: 'auto',
       },
     ],
-    "@typescript-eslint/no-explicit-any": "off",
+    'no-loop-func': 'error',
+    'no-await-in-loop': 'warn',
   },
 };
