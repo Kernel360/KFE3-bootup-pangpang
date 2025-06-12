@@ -1,11 +1,11 @@
-export const COLOR_MAP = {
+export const COLORS = {
   primary: 'var(--color-brand-primary)',
   success: 'var(--color-success-primary)',
   danger: 'var(--color-danger-primary)',
   info: 'var(--color-info-primary)',
 } as const;
 
-export const SIZE_MAP = {
+export const SIZES = {
   xs: 'var(--size-icon-xs)',
   sm: 'var(--size-icon-sm)',
   md: 'var(--size-icon-md)',

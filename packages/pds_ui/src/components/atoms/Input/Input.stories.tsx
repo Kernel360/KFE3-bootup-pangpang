@@ -1,9 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import Input, { type InputProps } from './Input';
+import { InputProps } from './input-types';
+import Input from './Input';
+import { InputSize, InputState, InputVariant } from './input-styles';
 
-// 명시적 타입 정의
 const meta: Meta<InputProps> = {
-  title: 'Components/Atoms/Input',
+  title: 'Atoms/Input',
   component: Input,
   parameters: {
     layout: 'centered',
@@ -18,17 +19,17 @@ const meta: Meta<InputProps> = {
   argTypes: {
     variant: {
       control: { type: 'select' },
-      options: ['default', 'filled', 'ghost'],
+      options: ['default', 'filled', 'ghost'] as InputVariant[],
       description: 'Input의 시각적 스타일 변형',
     },
     size: {
       control: { type: 'select' },
-      options: ['sm', 'md', 'lg'],
+      options: ['sm', 'md', 'lg'] as InputSize[],
       description: 'Input의 크기',
     },
     state: {
       control: { type: 'select' },
-      options: ['default', 'error', 'success'],
+      options: ['default', 'error', 'success'] as InputState[],
       description: 'Input의 상태',
     },
     isError: {
@@ -53,12 +54,8 @@ const meta: Meta<InputProps> = {
     },
     type: {
       control: { type: 'select' },
-      options: ['text', 'email', 'password', 'number', 'tel', 'url', 'search'],
+      options: ['text', 'password', 'email', 'number'],
       description: 'Input 타입',
-    },
-    containerClassName: {
-      control: { type: 'text' },
-      description: '컨테이너 추가 CSS 클래스',
     },
     className: {
       control: { type: 'text' },
@@ -180,18 +177,6 @@ export const InputTypes: Story = {
         <label className="block text-sm font-medium mb-2">숫자</label>
         <Input type="number" placeholder="숫자를 입력하세요" />
       </div>
-      <div>
-        <label className="block text-sm font-medium mb-2">전화번호</label>
-        <Input type="tel" placeholder="010-1234-5678" />
-      </div>
-      <div>
-        <label className="block text-sm font-medium mb-2">URL</label>
-        <Input type="url" placeholder="https://example.com" />
-      </div>
-      <div>
-        <label className="block text-sm font-medium mb-2">검색</label>
-        <Input type="search" placeholder="검색어를 입력하세요" />
-      </div>
     </div>
   ),
 };
@@ -251,17 +236,6 @@ export const FormExample: Story = {
         <p className="text-sm text-red-600 mt-1">
           비밀번호는 8자 이상이어야 합니다.
         </p>
-      </div>
-
-      <div>
-        <label className="block text-sm font-medium mb-2">전화번호</label>
-        <Input type="tel" placeholder="010-1234-5678" variant="ghost" />
-      </div>
-
-      <div>
-        <label className="block text-sm font-medium mb-2">웹사이트</label>
-        <Input type="url" placeholder="https://example.com" isSuccess />
-        <p className="text-sm text-green-600 mt-1">유효한 URL입니다.</p>
       </div>
 
       <button

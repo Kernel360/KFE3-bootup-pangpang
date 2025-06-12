@@ -4,7 +4,7 @@ import { ICONS, IconName } from './assets/Icons';
 
 const ICON_NAMES = Object.keys(ICONS) as IconName[];
 const meta: Meta<typeof Icon> = {
-  title: 'Components/Icon',
+  title: 'Atoms/Icon',
   component: Icon,
   argTypes: {
     name: {

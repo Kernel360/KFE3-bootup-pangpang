@@ -1,103 +1,54 @@
-import React, { forwardRef } from 'react';
-import { cva, type VariantProps } from 'class-variance-authority';
+import React from 'react';
 import { cn } from '../../../utils/cn';
+import { InputProps } from './input-types';
+import { useInput } from './useInput/useInput';
+import { BASE, SIZES, STATES, VARIANTS } from './input-styles';
 
-// Input 컴포넌트의 스타일 variants 정의
-const inputVariants = cva(
-  [
-    'w-full border transition-colors duration-200',
-    'placeholder:text-text-tertiary text-text-primary',
-    'focus:outline-none focus:ring-2 focus:ring-offset-0',
-    'disabled:cursor-not-allowed disabled:opacity-50 disabled:bg-surface-default',
-    'file:border-0 file:bg-transparent',
-  ],
-  {
-    variants: {
-      variant: {
-        default: [
-          'border-border-default bg-surface-white',
-          'focus:border-brand-primary focus:ring-brand-primary/20',
-          'hover:enabled:border-brand-primary-hover',
-        ],
-        filled: [
-          'border-transparent bg-surface-default',
-          'focus:bg-surface-white focus:border-brand-primary focus:ring-brand-primary/20',
-          'hover:bg-surface-white',
-        ],
-        ghost: [
-          'border-transparent bg-transparent',
-          'focus:border-border-default focus:ring-brand-primary/20',
-        ],
-      },
-      size: {
-        sm: 'h-input-sm px-component-sm typo-body-small rounded-input',
-        md: 'h-input-md px-component-md typo-body-default rounded-input',
-        lg: 'h-input-lg px-component-lg typo-body-large rounded-input',
-      },
-      state: {
-        default: '',
-        error:
-          'border-danger-primary focus:border-danger-primary focus:ring-danger-primary/20',
-        success:
-          'border-success-primary focus:border-success-primary focus:ring-success-primary/20',
-      },
-    },
-    defaultVariants: {
-      variant: 'default',
-      size: 'md',
-      state: 'default',
-    },
-  },
-);
+const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref) => {
+  const {
+    size = 'md',
+    variant = 'default',
+    state = 'default',
+    isError,
+    isSuccess,
+    className,
+    disabled,
+    required,
+    readOnly,
+    defaultValue,
+    ...rest
+  } = props;
 
-export interface InputProps
-  extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size'>,
-    VariantProps<typeof inputVariants> {
-  isError?: boolean;
-  isSuccess?: boolean;
-  containerClassName?: string;
-}
+  const useInputProps = {
+    ...rest,
+    isDisabled: disabled,
+    isRequired: required,
+    isReadOnly: readOnly,
+    size,
+    defaultValue: defaultValue?.toString(),
+  };
 
-// Input 컴포넌트 구현
-const Input = forwardRef<HTMLInputElement, InputProps>(
-  (
-    {
-      className,
-      containerClassName,
-      variant,
-      size,
-      state,
-      isError,
-      isSuccess,
-      id,
-      disabled,
-      required,
-      ...props
-    },
-    ref,
-  ) => {
-    // 상태 결정 (props 우선순위: isError > isSuccess > state)
-    const currentState = isError ? 'error' : isSuccess ? 'success' : state;
+  const { inputProps } = useInput(useInputProps);
 
-    return (
-      <div className={cn('relative w-full', containerClassName)}>
-        <input
-          ref={ref}
-          id={id}
-          disabled={disabled}
-          required={required}
-          className={cn(
-            inputVariants({ variant, size, state: currentState }),
-            className,
-          )}
-          aria-invalid={isError}
-          aria-required={required}
-          {...props}
-        />
-      </div>
-    );
-  },
-);
+  // 상태 결정 (props 우선순위: isError > isSuccess > state)
+  const currentState = isError ? 'error' : isSuccess ? 'success' : state;
+
+  return (
+    <input
+      {...inputProps}
+      ref={ref}
+      className={cn(
+        BASE,
+        SIZES[size],
+        VARIANTS[variant],
+        STATES[currentState],
+        className,
+      )}
+      aria-invalid={isError}
+      aria-required={required}
+    />
+  );
+});
 
 Input.displayName = 'Input';
 

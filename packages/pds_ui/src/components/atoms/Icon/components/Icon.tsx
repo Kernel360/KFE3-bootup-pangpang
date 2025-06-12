@@ -1,6 +1,6 @@
 import type { IconProps } from '../icon-types';
-import { COLOR_MAP, SIZE_MAP } from '../icon-styles';
-import { cn } from '../../../utils/cn';
+import { COLORS, SIZES } from '../icon-styles';
+import { cn } from '../../../../utils/cn';
 import { ICONS } from '../assets/Icons';
 
 export const Icon = ({
@@ -11,8 +11,8 @@ export const Icon = ({
   ...props
 }: IconProps) => {
   const IconComponent = ICONS[name];
-  const sizeValue = SIZE_MAP[size];
-  const colorValue = color ? COLOR_MAP[color] : undefined;
+  const sizeValue = SIZES[size];
+  const colorValue = color ? COLORS[color] : undefined;
 
   if (!IconComponent) return null;
 
