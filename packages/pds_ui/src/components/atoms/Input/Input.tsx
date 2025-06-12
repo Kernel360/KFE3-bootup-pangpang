@@ -15,6 +15,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref) => {
     disabled,
     required,
     readOnly,
+    defaultValue,
     ...rest
   } = props;
 
@@ -24,6 +25,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref) => {
     isRequired: required,
     isReadOnly: readOnly,
     size,
+    defaultValue: defaultValue?.toString(),
   };
 
   const { inputProps } = useInput(useInputProps);
